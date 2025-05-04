@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page - Flipkart Clone</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (Same as index.html) -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="../index.html" class="logo-container">
+                    <img src="../images/logo.png" alt="Flipkart" class="logo-img">
+                </a>
+            </div>
+
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search for Products, Brands and More">
+                    <div class="search-icons-right">
+                        <button id="scribble-search-btn" class="search-bar-icon-btn" aria-label="Scribble Search">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button id="mic-search-btn" class="search-bar-icon-btn" aria-label="Search by Voice">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="image-search-btn" class="search-bar-icon-btn" aria-label="Search by Image">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="#" id="user-account-btn" class="header-link user-account">
+                    <i class="far fa-user-circle"></i>
+                    <span>Login</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                </a>
+                <a href="#" id="cart-icon" class="header-link cart-link">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                </a>
+                <a href="#" id="new-features-btn" class="header-link new-features">
+                    <i class="fas fa-star"></i> New Features
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <main class="product-details">
+        <div class="product-container">
+            <div class="product-images">
+                <div class="main-image">
+                    <img id="main-product-image" src="" alt="Product Image">
+                </div>
+                <div class="thumbnail-images">
+                    <!-- Thumbnails will be added by JavaScript -->
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 id="product-title"></h1>
+                <div class="product-rating">
+                    <span class="rating-stars"></span>
+                    <span class="rating-count"></span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price"></span>
+                    <span class="original-price"></span>
+                    <span class="discount"></span>
+                </div>
+                <div class="bank-offers">
+                    <h3>Available offers</h3>
+                    <ul>
+                        <li><i class="fas fa-tag"></i> Bank Offer 5% Cashback on Flipkart Axis Bank Card</li>
+                        <li><i class="fas fa-tag"></i> Special Price Get extra ₹3000 off (price inclusive of discount)</li>
+                    </ul>
+                </div>
+                <div class="delivery-info">
+                    <h3>Delivery</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Delivery to <span class="delivery-pincode">110001</span></p>
+                    <p class="delivery-time">Delivery by Tomorrow, Free</p>
+                </div>
+                <div class="product-actions">
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                    <button class="buy-now-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="product-specifications">
+                <h2>Specifications</h2>
+                <div class="specs-table">
+                    <!-- Specifications will be added by JavaScript -->
+                </div>
+            </div>
+
+            <div class="price-tracker">
+                <h2>Price History</h2>
+                <div class="price-chart">
+                    <canvas id="price-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>My Cart (<span id="sidebar-cart-count">0</span>)</h2>
+            <button id="cart-close-btn" class="cart-close-btn">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Your cart is empty!</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button class="checkout-btn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- New Features Popup -->
+    <div id="new-features-popup" class="new-features-popup">
+        <div class="new-features-content">
+            <div class="new-features-header">
+                <h2>✨ New Features</h2>
+                <button id="new-features-close" class="new-features-close">×</button>
+            </div>
+            <div class="new-features-list">
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Search Assistant</h3>
+                    <p>Press Shift twice to open our AI-powered search assistant. Describe what you're looking for in natural language.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Scribble Search</h3>
+                    <p>Draw what you're looking for! Our scribble search feature helps you find products by drawing them.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Voice Search</h3>
+                    <p>Search hands-free using voice commands. Just click the mic icon and speak your query.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-camera"></i>
+                    <h3>Image Search</h3>
+                    <p>Upload an image to find similar products. Perfect for when you see something you like!</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Price Tracker</h3>
+                    <p>Track price history of products and get notified when prices drop. Never miss a good deal!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="product.js"></script>
+</body>
+</html> 

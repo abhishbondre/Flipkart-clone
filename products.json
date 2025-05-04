@@ -1,0 +1,124 @@
+[
+    {
+      "id": 1,
+      "name": "Cool T-Shirt",
+      "price": 499,
+      "originalPrice": 799,
+      "image": "images/t shirt.jpg",
+      "rating": 4.2,
+      "ratingCount": 120,
+      "specifications": {
+        "Material": "Cotton",
+        "Color": "Blue",
+        "Size": "M, L, XL"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 799},
+        {"date": "2024-05-10", "price": 699},
+        {"date": "2024-05-20", "price": 599},
+        {"date": "2024-06-01", "price": 499}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Smartphone Pro",
+      "price": 19999,
+      "originalPrice": 22999,
+      "image": "images/phone.jpg",
+      "rating": 4.5,
+      "ratingCount": 340,
+      "specifications": {
+        "Display": "6.5-inch AMOLED",
+        "RAM": "8GB",
+        "Storage": "128GB",
+        "Battery": "5000mAh"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 22999},
+        {"date": "2024-05-15", "price": 21999},
+        {"date": "2024-05-25", "price": 20999},
+        {"date": "2024-06-01", "price": 19999}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Running Shoes",
+      "price": 1299,
+      "originalPrice": 1799,
+      "image": "images/running shoe.jpg",
+      "rating": 4.0,
+      "ratingCount": 80,
+      "specifications": {
+        "Material": "Mesh",
+        "Color": "Blue/Green",
+        "Size": "7, 8, 9, 10"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 1799},
+        {"date": "2024-05-12", "price": 1599},
+        {"date": "2024-05-22", "price": 1399},
+        {"date": "2024-06-01", "price": 1299}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Wireless Headphones",
+      "price": 2499,
+      "originalPrice": 2999,
+      "image": "images/headphone.jpg",
+      "rating": 4.3,
+      "ratingCount": 210,
+      "specifications": {
+        "Type": "Over-Ear",
+        "Battery Life": "30 hours",
+        "Color": "Blue"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 2999},
+        {"date": "2024-05-18", "price": 2799},
+        {"date": "2024-05-28", "price": 2599},
+        {"date": "2024-06-01", "price": 2499}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Laptop XYZ",
+      "price": 45000,
+      "originalPrice": 49999,
+      "image": "images/laptop.jpg",
+      "rating": 4.6,
+      "ratingCount": 95,
+      "specifications": {
+        "Processor": "Intel i5 12th Gen",
+        "RAM": "16GB",
+        "Storage": "512GB SSD",
+        "Display": "15.6-inch FHD"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 49999},
+        {"date": "2024-05-20", "price": 47999},
+        {"date": "2024-05-30", "price": 45999},
+        {"date": "2024-06-01", "price": 45000}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Stylish Watch",
+      "price": 3199,
+      "originalPrice": 3999,
+      "image": "images/watch.jpg",
+      "rating": 4.1,
+      "ratingCount": 60,
+      "specifications": {
+        "Type": "Smartwatch",
+        "Display": "1.4-inch AMOLED",
+        "Battery": "10 days"
+      },
+      "priceHistory": [
+        {"date": "2024-05-01", "price": 3999},
+        {"date": "2024-05-15", "price": 3599},
+        {"date": "2024-05-25", "price": 3399},
+        {"date": "2024-06-01", "price": 3199}
+      ]
+    }
+  ]

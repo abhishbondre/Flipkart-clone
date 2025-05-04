@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header (Always Visible) -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#" class="logo-container">
+                    <img src="images/logo.png" alt="Flipkart" class="logo-img">
+                 </a>
+            </div>
+
+            <div class="header-center">
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="Search for Products, Brands and More">
+                    <div class="search-icons-right">
+                        <button id="scribble-search-btn" class="search-bar-icon-btn" aria-label="Scribble Search">
+                             <i class="fas fa-pencil-alt"></i>
+                         </button>
+                        <button id="mic-search-btn" class="search-bar-icon-btn" aria-label="Search by Voice">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button id="image-search-btn" class="search-bar-icon-btn" aria-label="Search by Image">
+                            <i class="fas fa-camera"></i>
+                        </button>
+                        <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                 <a href="#" id="user-account-btn" class="header-link user-account">
+                    <i class="far fa-user-circle"></i>
+                    <span>Login</span>
+                    <i class="fas fa-chevron-down dropdown-arrow"></i>
+                 </a>
+                 <a href="#" id="cart-icon" class="header-link cart-link">
+                    <i class="fas fa-shopping-cart"></i> Cart
+                    <span id="cart-count" class="cart-count">0</span>
+                 </a>
+                 <a href="#" id="new-features-btn" class="header-link new-features">
+                    <i class="fas fa-star"></i> New Features
+                 </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Scribble Pad (Initially Hidden) -->
+    <div id="scribble-pad" class="scribble-pad-container" style="display: none;">
+        <canvas id="scribble-canvas" width="400" height="200"></canvas>
+        <div class="scribble-controls">
+            <button id="clear-scribble-btn">Clear</button>
+            <button id="search-scribble-btn">Search Scribble</button>
+            <button id="close-scribble-btn">×</button>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper -->
+    <div class="content-wrapper">
+
+        <!-- Mode Toggle Segmented Control -->
+        <div class="mode-toggle-segmented">
+            <button class="mode-segment mode-segment-active" id="normal-mode-btn">Normal</button>
+            <button class="mode-segment" id="reel-mode-btn">Reel</button>
+            <button class="mode-segment" id="mystery-mode-btn">Mystery Box</button>
+        </div>
+
+        <!-- Normal Mode Section -->
+        <div id="normal-mode-section">
+            <!-- Category Navigation -->
+             <nav class="category-nav">
+                 <div class="category-container">
+                     <a href="#" class="category-item">
+                         <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="Top Offers">
+                         <span>Top Offers</span>
+                     </a>
+                     <a href="#" class="category-item">
+                         <img src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100" alt="Mobiles & Tablets">
+                         <span>Mobiles & Tablets</span>
+                     </a>
+                     <a href="#" class="category-item">
+                          <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="Electronics">
+                         <span>Electronics</span>
+                      </a>
+                      <a href="#" class="category-item">
+                          <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="TVs & Appliances">
+                          <span>TVs & Appliances</span>
+                      </a>
+                     <a href="#" class="category-item">
+                         <img src="https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100" alt="Fashion">
+                         <span>Fashion</span>
+                     </a>
+                     <a href="#" class="category-item">
+                         <img src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100" alt="Beauty">
+                         <span>Beauty</span>
+                     </a>
+                     <a href="#" class="category-item">
+                          <img src="https://rukminim1.flixcart.com/flap/128/128/image/ab7e2b022a4587dd.jpg?q=100" alt="Home & Furniture">
+                          <span>Home & Furniture</span>
+                      </a>
+                       <a href="#" class="category-item">
+                          <img src="https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100" alt="Flights">
+                          <span>Flights</span>
+                      </a>
+                      <a href="#" class="category-item">
+                         <img src="https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100" alt="Grocery">
+                         <span>Grocery</span>
+                     </a>
+                 </div>
+             </nav>
+
+            <!-- Banner/Carousel Section (Only in Normal Mode) -->
+            <section id="hero-banner-section" class="hero-banner main-content-section">
+                <button class="banner-arrow left-arrow" title="Previous banner"><i class="fas fa-chevron-left"></i></button>
+                <!-- Banner Images -->
+                <img src="images/banner1.png" alt="Banner 1" class="banner-image active">
+                <img src="images/banner2.png" alt="Banner 2" class="banner-image">
+                <!-- Add more banners as needed -->
+                <button class="banner-arrow right-arrow" title="Next banner"><i class="fas fa-chevron-right"></i></button>
+                <div class="banner-dots">
+                    <!-- Dots will be generated by JS based on image count -->
+                </div>
+            </section>
+
+            <!-- Products Section (Only in Normal Mode) -->
+            <section class="products-section main-content-section">
+                <h2>Demo Products</h2>
+                <div id="product-grid" class="product-grid">
+                    <!-- Products will be loaded here by JS from products.json -->
+                </div>
+            </section>
+        </div>
+
+        <!-- Reel Mode Section -->
+        <div id="reel-mode-section">
+            <div class="reel-view-container">
+                <div id="reel-container" class="reel-container">
+                    <!-- Product Reels will be loaded here by JS -->
+                     <p class="loading-reels">Loading Reels...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mystery Box Mode Section -->
+        <div id="mystery-mode-section">
+            <section class="mystery-box-section main-content-section">
+                <h2>🎁 Mystery Box Unboxing</h2>
+                <button id="open-mystery-box-btn" class="mystery-box-btn">Open Mystery Box</button>
+                <div id="mystery-box-modal" class="mystery-box-modal">
+                    <div class="mystery-box-content">
+                        <button id="close-mystery-box" class="close-mystery-box">×</button>
+                        <div class="mystery-box-animation">
+                            <div class="box-lid"></div>
+                            <div class="box-body"></div>
+                            <div class="box-shadow"></div>
+                            <div class="box-effect"></div>
+                        </div>
+                        <div class="mystery-box-result">
+                            <!-- Prize will be revealed here -->
+                        </div>
+                        <button id="unbox-action-btn" class="unbox-action-btn">Unbox Now</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div> <!-- End Content Wrapper -->
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2023 Flipkart Clone - Frontend Demo</p>
+    </footer>
+
+    <!-- Login Popup (Keep existing structure) -->
+    <div id="login-popup" class="popup-overlay">
+         <div class="popup-content">
+             <button class="popup-close" id="login-close-btn">×</button>
+             <div class="popup-left">
+                 <h2>Login</h2>
+                 <p>Get access to your Orders, Wishlist and Recommendations</p>
+                 <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/login_img_c4a81e.png" alt="Login Graphic" class="login-graphic">
+             </div>
+             <div class="popup-right">
+                 <form>
+                     <input type="text" placeholder="Enter Email/Mobile number" required>
+                     <button type="button" class="popup-action-btn request-otp-btn">Request OTP</button>
+                 </form>
+                 <div class="popup-footer-link">
+                    <a href="#">New to Flipkart? Create an account</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+
+    <!-- Cart Sidebar (Keep existing structure) -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>My Cart (<span id="sidebar-cart-count">0</span>)</h2>
+            <button id="cart-close-btn" class="cart-close-btn">×</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart-message">Your cart is empty!</p>
+        </div>
+        <div id="cart-summary" class="cart-footer"> <!-- Added ID for easier hiding -->
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span id="cart-total-price">₹0</span>
+            </div>
+            <button class="checkout-btn">Place Order</button>
+        </div>
+        <div id="empty-cart-footer-message" style="display: none; text-align: center; padding: 20px; color: #555;">Cart is empty.</div>
+    </div>
+
+    <!-- AI Search Popup (Keep existing structure) -->
+    <div id="ai-search-popup" class="ai-search-popup">
+        <div class="ai-search-content">
+            <div class="ai-search-header">
+                <h2>AI Search Assistant</h2>
+                <button id="ai-search-close" class="ai-search-close">×</button>
+            </div>
+            <div class="ai-search-input-container">
+                <i class="fas fa-robot ai-search-icon"></i>
+                <input type="text" id="ai-search-input" placeholder="Describe what you're looking for...">
+            </div>
+            <div class="ai-search-results">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- New Features Popup (Keep existing structure) -->
+    <div id="new-features-popup" class="new-features-popup">
+        <div class="new-features-content">
+            <div class="new-features-header">
+                <h2>✨ New Features</h2>
+                <button id="new-features-close" class="new-features-close">×</button>
+            </div>
+            <div class="new-features-list">
+                 <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Search Assistant</h3>
+                    <p>Press Shift twice to open our AI-powered search assistant. Describe what you're looking for in natural language.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-pencil-alt"></i>
+                    <h3>Scribble Search</h3>
+                    <p>Draw what you're looking for! Our scribble search feature helps you find products by drawing them.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Voice Search</h3>
+                    <p>Search hands-free using voice commands. Just click the mic icon and speak your query.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-camera"></i>
+                    <h3>Image Search</h3>
+                    <p>Upload an image to find similar products. Perfect for when you see something you like!</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Price Tracker</h3>
+                    <p>Track price history of products (on product page) and get notified when prices drop. Never miss a good deal!</p>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-film"></i>
+                    <h3>Reel Mode</h3>
+                    <p>Explore products in an engaging, full-screen vertical format. Swipe up for the next deal!</p>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-box-open"></i>
+                    <h3>Mystery Box</h3>
+                    <p>Feeling lucky? Open a mystery box for a chance to win exciting discounts and offers!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
